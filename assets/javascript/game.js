@@ -1,5 +1,5 @@
 
-
+//Starting variables
 var flowers = ["TULIP", "LILAC", "DAISY", "BUTTERCUP", "HYACINTH", "DAHLIA", "CARNATION", "DAFFODIL", "COLUMBINE", "BLEEDING HEART", "STARGAZER LILY", "PHLOX", "HOLLYHOCK", "LUPINE", "CANDYTUFT", "CHERRY BLOSSOMS", "BLUEBELLS", "ALYSSUM", "PETUNIA", "SUNFLOWER"]
 var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var usedLetters = [];
@@ -19,9 +19,6 @@ function pickWord() {
     if (index > -1) {
         flowers.splice(index, 1);
     }
-    console.log(flowers);
-    console.log(answer);
-    console.log(answer.length);
 }
 
 // Uses the number of letters in answer and displays an underscore for each letter and a space where there is a two-word answer.
@@ -53,8 +50,7 @@ function letterPress() {
             inAlphabet = true;
             var usedLettersAsString = usedLetters.join(", ");
             document.getElementById("used").innerHTML = usedLettersAsString;
-            console.log(usedLetters);
-            }
+        }
     }
 }
 
@@ -74,7 +70,6 @@ function matchLetter() {
 
     if (positions.length <= 0 && inAlphabet)  {
         tries--;
-        console.log(tries);
         inAlphabet = false;
         if (tries < 1) {
             losses++;
@@ -115,10 +110,15 @@ function endGame() {
     mystery = [];
     tries = 10;
     inAlphabet = false;
+    if (flowers.length < 2) {
+        flowers = ["TULIP", "LILAC", "DAISY", "BUTTERCUP", "HYACINTH", "DAHLIA", "CARNATION", "DAFFODIL", "COLUMBINE", "BLEEDING HEART", "STARGAZER LILY", "PHLOX", "HOLLYHOCK", "LUPINE", "CANDYTUFT", "CHERRY BLOSSOMS", "BLUEBELLS", "ALYSSUM", "PETUNIA", "SUNFLOWER"]
+    }
     pickWord();
     setup();
+
 }
 
+//After the player solves the word or runs out of tries, the game displays the name and picture of the flower
 function addFlowerImage() {
     if (answer === "TULIP") {
         document.getElementById("flowerImage").src = "assets/images/tulip.jpg";

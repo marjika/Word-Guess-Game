@@ -11,6 +11,7 @@
  
 </head>
 
+<!-- The game loads two functions at the start to pick the mystery word and display the blanks to be guessed -->
 <body onload="pickWord(); setup();">
     <div class="container" style="width: 100%; text-align: center; background-color: #f20081;
     background-image: url(&quot;http://www.transparenttextures.com/patterns/gray-floral.png&quot;);">
@@ -18,7 +19,7 @@
         <div class="jumbotron" style="color: antiquewhite; background-color: #00858a;
         background-image: url(&quot;http://www.transparenttextures.com/patterns/gray-floral.png&quot;);">
           <h1 class="display-4">World of Flowers Guessing Game</h1>
-          <p class="lead"><strong>Guess the flower name to reveal its image.</strong></p>
+          <p class="lead"><strong>Try to guess the flower name in this hangman-type game.</strong></p>
       </div>
     </div>
 
@@ -41,10 +42,11 @@
 
 
           </div>
+          <div class="hidden-xs col-sm-1"></div>
 
-            <div class="hidden-xs col-sm-6">
+            <div class="hidden-xs col-sm-5">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" id="flowerImage" src="http://hdfreewallpaper.net/wp-content/uploads/2015/09/Colorful-Garden-Flowers-hd-free-wallpapers.jpg" alt="A flower">
+                    <img class="card-img-top" id="flowerImage" src="assets/images/flower-garden.jpg" alt="A flower">
                     <div class="card-body" style="text-align: center; font-size: 20px; background-color: #bfdadb;">
                       <p class="card-text" id="flowerType">Flower Garden</p>
                     </div>
